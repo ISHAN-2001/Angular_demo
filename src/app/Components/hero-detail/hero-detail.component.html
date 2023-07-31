@@ -1,0 +1,16 @@
+<div class="if" *ngIf="selectedHero ; else no_element">
+    <h2>Selected Hero : {{selectedHero.name}}</h2>
+    <div><p>id: {{selectedHero.id}}</p></div>
+
+    <div class="form2">
+        <label for="selectedName">SelectedName</label>
+        <input type="text" name="selectedName" id="selectedName" [(ngModel)]="selectedHero.name">
+        <button type="button" (click)="updateHero(selectedHero)">Save</button>
+    </div>
+</div>
+
+<ng-template #no_element>
+    <p>No Item found of given id</p>
+</ng-template>
+
+<button type="button" (click)="goBack()">Back</button>
